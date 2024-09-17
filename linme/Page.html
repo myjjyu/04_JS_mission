@@ -1,11 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/linme.css" />
+    <link rel="stylesheet" href="./css/Page.css" />
+    <title>린미 - 세상에 없던 H-커머스</title>
+  </head>
+  <body>
+    <!-- 오른쪽 하단 고정 버튼 -->
+    <div class="Topbutton">
+      <a href="#"><img src="./img/Topbutton.png" alt="Top Button" /></a>
+    </div>
+
+    <!-- 헤더 영역 -->
+    <header>
+      <div class="header-container">
+        <div class="info-item">
+          <a href="#">로그인</a>
+          <span>|</span>
+          <a href="#">회원가입</a>
+          <span>|</span>
+          <a href="#">고객센터 ▾</a>
+        </div>
+        <div class="top-main">
+          <a href="./index.html">
+            <img src="./img/logo.png" alt="Logo" width="82" height="41" />
+          </a>
+          <div class="toggl">
+            <button class="toggl1"></button>
+            <button id="toggleButton" class="toggle-btn">기능식품</button>
+          </div>
+          <div class="header-bar">
+            <div class="search-container">
+              <input class="bar" type="text" placeholder="#눈건강 #뼈건강" />
+              <img
+                src="./img/search_pink@2x.png"
+                alt="Search"
+                class="search-icon"
+              />
+            </div>
+          </div>
+          <div class="top-item">
+            <a href="#"
+              ><img
+                class="item"
+                src="./img/data_image_png;base… (2).png"
+                alt="Item 1"
+            /></a>
+            <a href="#"
+              ><img
+                class="item"
+                src="./img/data_image_png;base… (4).png"
+                alt="Item 2"
+            /></a>
+            <a href="#"
+              ><img
+                class="item"
+                src="./img/data_image_png;base….png"
+                alt="Item 3"
+            /></a>
+            <a href="#"
+              ><img
+                class="item"
+                src="./img/data_image_png;base… (1).png"
+                alt="Item 4"
+            /></a>
+          </div>
+        </div>
+        <div class="headerfooter">
+          <div class="ham-menu" id="categoryButton" onclick="toggleAccordion()">
+            <a href="#"><img class="ham" src="./img/ham.png" alt="Menu" /></a>
+            <p class="text">카테고리</p>
+          </div>
+          <div class="accordion-content">
+            <ul class="header-list">
+              <li>
+                <a href="./view.html?list=NewList" data-list="NewList"
+                  >신상품</a
+                >
+              </li>
+              <li>
+                <a href="./view.html?list=BestList" data-list="BestList"
+                  >베스트</a
+                >
+              </li>
+              <li>
+                <a href="./view.html?list=GoodList" data-list="GoodList"
+                  >특가상품</a
+                >
+              </li>
+            </ul>
+            <div id="product-list"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 영역 -->
+    <main>
+      <div>사진영역</div>
+
+      <!-- 상품 설명영역 -->
+      <div class="endsolid"></div>
+      <div class="productDetailTab">
+        <ul class="imgtext">
+          <li>
+            <a href="#mainimg" class="on">상품설명</a>
+          </li>
+          <li>
+            <a href="#review">리뷰</a>
+          </li>
+          <li>
+            <a href="#inquiry">상품문의</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="endsolid2"></div>
+      <div id="mainimg">
+        <img
+          src="./img/상세페이지/상세페이지.png"
+          width="897"
+          height="auto"
+        />
+      </div>
+
+      <div class="endsolid3"></div>
+
+        <div id="review" class="title">
+          <p>리뷰 <span>0</span></p>
+        </div>
+
+
+      <div class="reviewinfo">
+        <div class="box">
+          <p>0 <span>/ 5</span></p>
+          <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+          <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+          <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+          <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+          <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+        </div>
+      </div>
+      <div class="endsolid4"></div>
+      <p class="reviewtext">등록된 리뷰가 없습니다.</p>
+      <div class="endsolid3"></div>
+      <div class="container">
+          <div id="inquiry" class="title">
+            <p>상품 문의 <span>0</span></p>
+          </div>
+        <button class="button">문의하기</button>
+      </div>
+      <div class="inquiryCover">
+        <p class="center-group">제목</p>
+        <div class="right-group">
+          <p>작성자</p>
+          <p>작성일</p>
+          <p>답변상태</p>
+        </div>
+      </div>
+      <p class="reviewtext">등록된 문의가 없습니다.</p>
+      <div class="endsolid4"></div>
+    </main>
+    <!-- 푸터 영역 -->
+    <footer>
+      <div>
+        <ul class="footer-info">
+          <li><a href="https://inroes.co.kr/">회사소개</a><span>|</span></li>
+          <li><a href="#">이용약관</a><span>|</span></li>
+          <li><a href="#">개인정보처리방침</a><span>|</span></li>
+          <li><a href="https://admin.linme.kr/login">입점·제휴 문의</a></li>
+        </ul>
+      </div>
+      <div class="footer-secoend">
+        <div class="footer-logo">
+          <img src="./img/logo_footer@2x.png" width="80" height="38" />
+          <p>매일매일, 전문가의 건강한 관리 린미</p>
+        </div>
+        <div class="footer-main">
+          <div class="footer-1">
+            <ul>
+              <li class="name">주식회사 이노즈</li>
+              <li class="footer-info-menu">
+                대표자: 김보람<span> | </span>주소 : 서울특별시 강남구 역삼동
+                696-21
+              </li>
+              <li class="footer-info-menu">
+                통신판매업신고 : 2022-서울서초-2744 |
+                <span>사업자번호 : 123-88-02051</span>
+              </li>
+              <li class="snslogo">
+                <a href="https://blog.naver.com/linme_kr"
+                  ><img
+                    src="./img/블로그.png"
+                    width="23"
+                    height="23"
+                    alt="Blog"
+                /></a>
+              </li>
+              <li class="snslogo">
+                <a href="https://www.instagram.com/linme.official/"
+                  ><img
+                    src="./img/인스타그램.png"
+                    width="23"
+                    height="23"
+                    alt="Instagram"
+                /></a>
+              </li>
+              <li class="snslogo">
+                <a
+                  href="https://www.facebook.com/people/%EB%A6%B0%EB%AF%B8/61554968541751/"
+                  ><img
+                    src="./img/페이스북.png"
+                    width="23"
+                    height="23"
+                    alt="Facebook"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-2">
+            <ul>
+              <li class="name2">고객센터<span>02-508-2161</span></li>
+              <li class="footer-info-menu">평일 AM 10:00 - PM 17:00</li>
+              <li class="footer-info-menu">(점심시간 : 13:00 - 14:00)</li>
+              <li class="footer-info-menu">
+                <a href="#">E-mail : help@inroes.co.kr</a>
+              </li>
+              <li class="footer-info-menu">Fax : 02-547-2161</li>
+            </ul>
+          </div>
+          <div class="footer-3">
+            <a
+              href="https://play.google.com/store/apps/details?id=kr.inroes.linme"
+            >
+              <img
+                src="./img/구글페이.png"
+                width="169"
+                height="52"
+                alt="Google Play"
+              />
+            </a>
+            <a
+              href="https://apps.apple.com/kr/app/linme-%EB%A6%B0%EB%AF%B8/id6473827278"
+            >
+              <img
+                src="./img/앱스토어.png"
+                width="169"
+                height="52"
+                alt="App Store"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-end">
+        Copyright 2024. Linme Inc. All Rights Reserved.
+      </div>
+    </footer>
+
+    <!-- JavaScript 파일 -->
+    <script
+      src="https://kit.fontawesome.com/2c827c8cca.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/UtilHelper.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/view.js"></script>
+
+    <script>
+      // 카테고리alert창
+      document
+        .getElementById("categoryButton")
+        .addEventListener("click", function () {
+          alert("🚨강사님이 구현안해도 된다함🚨");
+        });
+    </script>
+  </body>
 </html>

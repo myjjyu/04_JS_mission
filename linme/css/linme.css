@@ -8,12 +8,13 @@ ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 /* ------------------------------------------------------------- */
 /* -------------------------헤더영역 ------------------------------*/
 /* ------------------------------------------------------------- */
+
 .Topbutton {
   position: fixed;
   bottom: 30px;
@@ -42,12 +43,10 @@ header {
   padding-top: 10px;
 }
 
-.header-list{
-padding-bottom: 2px;
-font-weight: 600;
+.header-list {
+  padding-bottom: 2px;
+  font-weight: 600;
 }
-
-
 
 /* .header-list a:hover {
   color: #ff697b;
@@ -57,8 +56,6 @@ font-weight: 600;
   border-bottom: 3px solid #ff697b;
   color: #ff697b;
 }
-
-
 
 .info-item {
   display: flex;
@@ -286,7 +283,6 @@ main {
   color: #ff697b;
 }
 
-
 /* ////main-secend 영역 */
 
 .main-secend {
@@ -335,7 +331,7 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   list-style: none;
-  justify-content: center; 
+  justify-content: center;
   width: 1200px;
   margin: auto;
 }
@@ -393,7 +389,6 @@ main {
   color: #bebebe;
 }
 
-
 .img-list ul {
   display: flex;
   flex-wrap: wrap;
@@ -405,7 +400,6 @@ main {
   text-align: start;
   max-width: 200px;
   cursor: pointer;
-
 }
 
 .img-list img {
@@ -425,7 +419,7 @@ main {
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
-.img-list .discount{
+.img-list .discount {
   height: auto;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 22px;
@@ -465,13 +459,13 @@ main {
   color: #bebebe;
 }
 
-.all_list_name li{
-  span{
-margin-left: 15px;
+.all_list_name li {
+  span {
+    margin-left: 15px;
   }
 }
 
-#All_list{
+#All_list {
   gap: 50px;
 }
 
@@ -491,7 +485,6 @@ margin-left: 15px;
   height: 12px;
   background-color: #f3f3f3;
 }
-
 .main_name {
   text-align: start;
   font-size: 21px;
@@ -502,7 +495,6 @@ margin-left: 15px;
   width: 1200px;
   margin-top: 50px;
 }
-
 
 .all_list_name {
   justify-content: space-between;
@@ -525,20 +517,15 @@ margin-left: 15px;
   }
 }
 
-
 /* .all_list_name li:first-child a {
   font-weight: 500;
   color: #ff697b;
 } */
 
-
 .all_list_name a.active {
   font-weight: 500;
   color: #ff697b;
 }
-
-
-
 
 /* ------------------------------------------------------------- */
 /* -------------------------푸터영역 ------------------------------*/
@@ -608,12 +595,12 @@ footer {
   max-width: 1200px;
 }
 
-.footer-info{
-  li{
-    span{
+.footer-info {
+  li {
+    span {
       margin-left: 15px;
       color: #787878;
-        }
+    }
   }
 }
 
@@ -679,4 +666,3 @@ footer {
   padding: 20px 0;
   background-color: #fcfcfc;
 }
-
