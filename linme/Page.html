@@ -7,6 +7,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
+"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/linme.css" />
     <link rel="stylesheet" href="./css/Page.css" />
     <title>린미 - 세상에 없던 H-커머스</title>
@@ -21,20 +27,24 @@
     <header>
       <div class="header-container">
         <div class="info-item">
-          <a href="#">로그인</a>
+          <a href="https://linme.kr/login">로그인</a>
           <span>|</span>
-          <a href="#">회원가입</a>
+          <a href="https://linme.kr/signUp">회원가입</a>
           <span>|</span>
-          <a href="#">고객센터 ▾</a>
+          <a href="./index.html">고객센터 ▾</a>
         </div>
         <div class="top-main">
           <a href="./index.html">
             <img src="./img/logo.png" alt="Logo" width="82" height="41" />
           </a>
-          <div class="toggl">
-            <button class="toggl1"></button>
-            <button id="toggleButton" class="toggle-btn">기능식품</button>
-          </div>
+
+          <input type="checkbox" id="toggle" hidden />
+          <label for="toggle" class="toggleSwitch">
+            <span class="toggleButton"></span>
+            <span class="toggleText toggleTextOff">기능식품</span>
+            <span class="toggleText toggleTextOn">맞춤식품</span>
+          </label>
+
           <div class="header-bar">
             <div class="search-container">
               <input class="bar" type="text" placeholder="#눈건강 #뼈건강" />
@@ -79,28 +89,17 @@
           </div>
           <div class="accordion-content">
             <ul class="header-list">
-              <li>
-                <a href="./view.html?list=NewList" data-list="NewList"
-                  >신상품</a
-                >
-              </li>
-              <li>
-                <a href="./view.html?list=BestList" data-list="BestList"
-                  >베스트</a
-                >
-              </li>
-              <li>
-                <a href="./view.html?list=GoodList" data-list="GoodList"
-                  >특가상품</a
-                >
-              </li>
+              <li><a href="./view.html" data-list="NewList">신상품</a></li>
+              <li><a href="./view.html" data-list="BestList">베스트</a></li>
+              <li><a href="./view.html" data-list="GoodList">특가상품</a></li>
             </ul>
-            <div id="product-list"></div>
           </div>
+
+          <div id="product-list"></div>
+          <!-- 신상품, 베스트, 특가상품 클릭시 자바스크립트 구현 -->
         </div>
       </div>
     </header>
-
     <!-- 메인 영역 -->
     <main>
       <div>사진영역</div>
@@ -132,10 +131,9 @@
 
       <div class="endsolid3"></div>
 
-        <div id="review" class="title">
-          <p>리뷰 <span>0</span></p>
-        </div>
-
+      <div id="review" class="title">
+        <p>리뷰 <span>0</span></p>
+      </div>
 
       <div class="reviewinfo">
         <div class="box">
@@ -151,9 +149,9 @@
       <p class="reviewtext">등록된 리뷰가 없습니다.</p>
       <div class="endsolid3"></div>
       <div class="container">
-          <div id="inquiry" class="title">
-            <p>상품 문의 <span>0</span></p>
-          </div>
+        <div id="inquiry" class="title">
+          <p>상품 문의 <span>0</span></p>
+        </div>
         <button class="button">문의하기</button>
       </div>
       <div class="inquiryCover">
@@ -270,6 +268,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.all.min.js
+    "></script>
     <script src="./assets/UtilHelper.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/view.js"></script>
@@ -281,6 +282,20 @@
         .addEventListener("click", function () {
           alert("🚨강사님이 구현안해도 된다함🚨");
         });
+
+      //문의하기 alert창
+      document.querySelector(".button").addEventListener("click", (e) => {
+        Swal.fire({
+          title: "로그인이 필요합니다.",
+          confirmButtonText: "확인",
+          width: 300,
+          height: 145,
+          customClass: {
+            confirmButton: "alert-button",
+            title: "title-text",
+          },
+        });
+      });
     </script>
   </body>
 </html>

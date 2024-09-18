@@ -44,20 +44,24 @@
     <header>
       <div class="header-container">
         <div class="info-item">
-          <a href="#">로그인</a>
+          <a href="https://linme.kr/login">로그인</a>
           <span>|</span>
-          <a href="#">회원가입</a>
+          <a href="https://linme.kr/signUp">회원가입</a>
           <span>|</span>
-          <a href="#">고객센터 ▾</a>
+          <a href="./index.html">고객센터 ▾</a>
         </div>
         <div class="top-main">
           <a href="./index.html">
             <img src="./img/logo.png" alt="Logo" width="82" height="41" />
           </a>
-          <div class="toggl">
-            <button class="toggl1"></button>
-            <button id="toggleButton" class="toggle-btn">기능식품</button>
-          </div>
+
+          <input type="checkbox" id="toggle" hidden />
+          <label for="toggle" class="toggleSwitch">
+            <span class="toggleButton"></span>
+            <span class="toggleText toggleTextOff">기능식품</span>
+            <span class="toggleText toggleTextOn">맞춤식품</span>
+          </label>
+
           <div class="header-bar">
             <div class="search-container">
               <input class="bar" type="text" placeholder="#눈건강 #뼈건강" />
@@ -101,31 +105,18 @@
             <p class="text">카테고리</p>
           </div>
           <div class="accordion-content">
-            
             <ul class="header-list">
-              <li>
-                <a href="./view.html?list=NewList" data-list="NewList"
-                  >신상품</a
-                >
-              </li>
-              <li>
-                <a href="./view.html?list=BestList" data-list="BestList"
-                  >베스트</a
-                >
-              </li>
-              <li>
-                <a href="./view.html?list=GoodList" data-list="GoodList"
-                  >특가상품</a
-                >
-              </li>
+              <li><a href="./view.html" data-list="NewList">신상품</a></li>
+              <li><a href="./view.html" data-list="BestList">베스트</a></li>
+              <li><a href="./view.html" data-list="GoodList">특가상품</a></li>
             </ul>
-            <div id="product-list"></div>
           </div>
+
+          <div id="product-list"></div>
+          <!-- 신상품, 베스트, 특가상품 클릭시 자바스크립트 구현 -->
         </div>
-    
       </div>
     </header>
-
     <!-- 메인 영역 -->
     <main>
       <div id="main-end">

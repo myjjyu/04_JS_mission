@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       discount.innerHTML = `${product.discount} <span class="original-price">${product.originalPrice}</span>`;
 
       const price = document.createElement("p");
+      price.classList.add("price");
       price.textContent = product.price;
 
       const shipping = document.createElement("p");

@@ -82,37 +82,75 @@ header {
 }
 
 /*------------------ 토글버튼 ---------------------*/
-.toggl {
-  position: relative;
+.toggleSwitch {
   width: 101px;
   height: 34px;
+  display: block;
+  position: relative;
   border-radius: 15.5px;
   border: 1px solid #ffd1d1;
   background-color: #fff6f6;
+  cursor: pointer;
+  overflow: hidden;
   right: 30px;
-  cursor: pointer;
 }
-.toggle-btn {
-  position: absolute;
-  top: 8px;
-  left: 37px;
-  font-size: 15px;
-  color: #ff697b;
-  border: none;
-  background-color: #fff6f6;
-  cursor: pointer;
-}
-.toggl1 {
-  position: absolute;
-  top: 4px;
-  left: 5px;
+
+.toggleButton {
   width: 24px;
   height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
   border-radius: 50%;
-  background-color: #ff697b;
-  border: none;
-  cursor: pointer;
+  background:  #ff697b;
 }
+
+.toggleText {
+  position: absolute;
+  top: -8px;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  color: #ff697b;
+  font-size: 14px;
+  transition: opacity 0.2s ease-in;
+}
+
+.toggleTextOff {
+  opacity: 1;
+  left:11px;
+}
+
+.toggleTextOn {
+  opacity: 0;
+  right:11px;
+  color: #fff;
+}
+
+#toggle:checked ~ .toggleSwitch {
+  background: #ff697b;
+}
+
+#toggle:checked ~ .toggleSwitch .toggleButton {
+  left: calc(100% - 30px);
+  background: #fff;
+}
+
+#toggle:checked ~ .toggleSwitch .toggleTextOff {
+  opacity: 0;
+}
+
+#toggle:checked ~ .toggleSwitch .toggleTextOn {
+  opacity: 1;
+}
+
+.toggleSwitch,
+.toggleButton,
+.toggleText {
+  transition: all 0.2s ease-in-out;
+}
+
 
 /*------------------ 검색바 ---------------------*/
 .header-bar {
@@ -419,6 +457,7 @@ main {
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
+
 .img-list .discount {
   height: auto;
   font-family: "Noto Sans KR", sans-serif;
@@ -666,3 +705,4 @@ footer {
   padding: 20px 0;
   background-color: #fcfcfc;
 }
+

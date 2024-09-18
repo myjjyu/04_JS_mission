@@ -92,8 +92,8 @@ main {
   color: #a5a5a5;
 }
 
-.reviewtext{
-  margin-top: 200px ;
+.reviewtext {
+  margin-top: 200px;
   margin-bottom: 110px;
   color: #a5a5a5;
   font-size: 25px;
@@ -103,10 +103,10 @@ main {
 .container {
   display: flex;
   width: 1200px;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
-  
+
   .button {
     width: 110px;
     height: auto;
@@ -118,8 +118,8 @@ main {
     background-color: #ff697b;
     color: #fff;
     padding: 10px 20px;
-    border: none; 
-    cursor: pointer; 
+    border: none;
+    cursor: pointer;
     border-radius: 3px;
     margin-top: 50px;
   }
@@ -146,5 +146,20 @@ main {
   display: flex;
   gap: 30px;
   margin-left: auto; /* 오른쪽 으로 붙기*/
+}
+
+/* 문의하기버튼 alert 창 css */
+.alert-button {
+  background-color: unset;
+  color: #ff697b;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.title-text {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
