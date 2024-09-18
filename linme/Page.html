@@ -102,22 +102,92 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
     </header>
     <!-- 메인 영역 -->
     <main>
-      <div>사진영역</div>
+      <!-- 상품주문영역 -->
+      <div class="product-contents">
+        <div id="productDeta">
+          <img
+            class="mini-img"
+            src="./img/1.광동30포.jpg"
+            width="140"
+            height="140"
+          />
+          <div class="image-wrapper">
+            <img src="./img/1.광동30포.jpg" width="500" height="100%" />
+            <img class="glider-prev" src="./img/leftbutton.png" />
+            <img class="glider-next" src="./img/rightbutton.png" />
+          </div>
+        </div>
+
+        <!-- /* 상품주문 디테일영역 */ -->
+        <div class="product-container">
+          <ul>
+            <li class="productInfoItem brandName">더블유제이</li>
+            <li class="productInfoItem productName">
+              [광동] 비타500 데일리스틱 (30포)
+            </li>
+            <li>
+              <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+              <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+              <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+              <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+              <i class="fa-regular fa-star" style="color: #ffd43b"></i>
+              <span class="span-out"
+                >0 <span class="span-in">/ 5</span>
+                <span class="span-in">후기</span> 0</span
+              >
+              <a href="#review"
+                ><img class="arrow" src="./img/arrow_showMore.png"
+              /></a>
+            </li>
+            <li class="discount">
+              5% <span class="original-price">12,900</span>
+            </li>
+            <li class="sale-price">12,300원</li>
+            <li class="solid"></li>
+            <li class="deliver">배송정보</li>
+            <li class="shipping">무료배송 <span>|</span> CJ대한통운</li>
+            <li class="solid"></li>
+          </ul>
+
+          <button class="required-Info">필수 표기 정보</button>
+          <p class="solid"></p>
+
+          <div class="number-control">
+            <button class="minus"></button>
+            <span class="number">1</span>
+            <button class="plus"></button>
+          </div>
+
+          <div class="total">
+            <div class="total-text">상품금액 합계</div>
+            <div class="total-price">12,300 <span>원</span></div>
+          </div>
+
+          <div class="solid end"></div>
+          <div class="btn">
+            <button class="cart-btn">장바구니</button>
+            <button class="buy-btn">바로구매</button>
+          </div>
+        </div>
+      </div>
 
       <!-- 상품 설명영역 -->
-      <div class="endsolid"></div>
-      <div class="productDetailTab">
-        <ul class="imgtext">
-          <li>
-            <a href="#mainimg" class="on">상품설명</a>
-          </li>
-          <li>
-            <a href="#review">리뷰</a>
-          </li>
-          <li>
-            <a href="#inquiry">상품문의</a>
-          </li>
-        </ul>
+
+      <div class="endsolid solid"></div>
+      <div class="sticky">
+        <div class="productDetailTab">
+          <ul class="imgtext">
+            <li>
+              <a href="#mainimg" class="tab-link on">상품설명</a>
+            </li>
+            <li>
+              <a href="#review" class="tab-link">리뷰</a>
+            </li>
+            <li>
+              <a href="#inquiry" class="tab-link">상품문의</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="endsolid2"></div>
@@ -271,9 +341,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
     <script src="
     https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.all.min.js
     "></script>
+
     <script src="./assets/UtilHelper.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/view.js"></script>
+    <script src="./js/page.js"></script>
 
     <script>
       // 카테고리alert창
