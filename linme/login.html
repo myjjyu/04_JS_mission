@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/linme.css" />
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/login.css" />
     <title>린미 - 세상에 없던 H-커머스</title>
   </head>
   <body>
@@ -98,55 +98,71 @@
     <!-- 메인 영역 -->
     <main>
       <div class="login-container">
-        <h1>  로그인</h1>
+        <h1>로그인</h1>
+        <form id="join_form">
+        <label class="input-info">
+            <input class="input" id="email" type="email" placeholder="아이디 입력 (이메일)" />
+            <input
+              class="input bottom"
+              id="passwordInput"
+              type="password"
+              placeholder="비밀번호 입력"
+            />
+            <img id="eyePassword" src="./img/login/password.png" />
+          </label>
+          <div class="login-list">
+            <label class="id-checkbox">
+              <input class="checkbox" type="checkbox" />
+              <span>아이디 저장</span>
+          <!-- <input class="input" type="text" placeholder="아이디 입력 (이메일)" />
+          <input
+            class="input bottom"
+            id="passwordInput"
+            type="password"
+            placeholder="비밀번호 입력"
+          />
+          <img id="eyePassword" src="./img/login/password.png" />
+        </label>
+        <div class="login-list">
+          <label class="id-checkbox">
+            <input class="checkbox" type="checkbox" />
+            <span>아이디 저장</span> -->
+          </label>
+          <ul>
+            <li>
+              <a href="#">아이디 찾기 <span>|</span></a>
+            </li>
+            <li>
+              <a href="#">비밀번호 찾기 <span>|</span></a>
+            </li>
+            <li>
+              <a href="#">회원가입</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button type="submit" class="login-button">로그인</button>
+        </div>
+      </form>
+        <div class="solid"></div>
+        <div class="sns-login">SNS 로그인</div>
+        <div class="sns-logo">
+          <a href="#">
+            <img src="./img/login/카카오.png" />
+            <span>카카오</span>
+          </a>
 
-<label class="input-info">
-  <input class="input" type="text" placeholder="아이디 입력 (이메일)">
-  <input class="input" type="text" placeholder="비밀번호 입력">
-  <img src="./img/login/password.png">
-  <input class="input" type="checkbox">아이디 저장
-</label>
-<div class="login-list">
-  <ul>
-    <li>
-      <a href="#">아이디 찾기</a>
-    <span>|</span>
-    </li>
-    <li>
-      <a href="#">비밀번호 찾기</a>
-    <span>|</span>
-    </li>
-    <li>
-      <a href="#">화원가입</a>
-    <span>|</span>
-    </li>
-  </ul>
-  <div>
-    <button>로그인</button>
-  </div>
-  <div>-</div>
-  <div>SNS 로그인</div>
-  <div>
-    <a href="#">
-      <img src="./img/login/카카오.png"> 카카오
-    </a>
- 
-    <a href="#">
-      <img src="./img/login/네이버.png"> 네이버
-    </a>
- 
-    <a href="#">
-      <img src="./img/login/애플.png"> 애플
-    </a>
- 
-  </div>
-</div>
+          <a href="#">
+            <img src="./img/login/네이버.png" />
+            <span>네이버</span>
+          </a>
+
+          <a href="#">
+            <img src="./img/login/애플.png" />
+            <span>애플</span>
+          </a>
+        </div>
       </div>
-
-
-
-
-
     </main>
     <!-- 푸터 영역 -->
     <footer>
@@ -253,6 +269,7 @@
 
     <script src="./assets/UtilHelper.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
 
     <script>
       // 카테고리alert창

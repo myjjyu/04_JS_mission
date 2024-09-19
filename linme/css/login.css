@@ -1,27 +1,192 @@
+/* 메인 영역 스타일 */
 main {
+  top: 200px;
   width: 100%;
-  height: 540px;
-  margin-top: 220px;
+  /* height: auto; */
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  top: 220px;
 }
 
 .login-container {
-  margin-top: 220px;
-  width: 100%;
-  height: 540px;
-  margin-top: 220px;
-  left: 30%;
+  /* background-color: yellow; */
+  width: 600px;
+  height: auto;
   text-align: center;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 28px;
+  margin-bottom: 50px;
 }
 
-.input-info{
+.input-info {
   position: relative;
-
 }
 
-.login-list{
- 
+.input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #d2d2d2;
+  border-top-left-radius: 5px; 
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0; 
+  border-bottom-right-radius: 0; 
+  font-size: 16px;
+}
+
+.bottom{
+  border-top-left-radius: 0; 
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px; 
+  border-top: none ;
+}
+.input:focus {
+  border-color: #ff697b;
+  outline: none;
+}
+
+
+.input-info {
+  position: relative;
+}
+
+.input-info img {
+  position: absolute;
+  right:20px;
+  top: 62px;
+  width: 24px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.login-list {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.checkbox {
+  display: none;
+}
+
+.id-checkbox {
+  display: flex;
+  align-items: center;
+  color: #787878;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.id-checkbox span {
+  display: inline-flex;
+  font-weight: 500;
+}
+
+.id-checkbox span:before {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  margin-right: 10px;
+  background-size: contain;
+  background-position: center;
+}
+
+/* 체크박스 체크시 이미지 변경 */
+.checkbox:checked + span:before{
+  background-image: url('../img/login/checkbox.png');
+  border: 1px solid #f3b9bf;
+}
+
+
+.login-list ul {
+  font-size: 15px;
+}
+
+.login-list li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.login-list a {
+  color: #787878;
+  text-decoration: none;
+  font-weight: 500;
+  span{
+    margin-left: 5px;
+  }
+}
+
+/* 로그인 버튼 */
+.login-button {
+  width: 500px;
+  height: 45px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  background-color: #ff697b;
+  color: white;
+  border-radius: 4px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.solid {
+  width: 100%;
+  border-bottom: 1.5px solid #d2d2d2;
+  margin: 10px 0;
+}
+
+/* SNS 로그인 */
+.sns-login {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.sns-logo {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+.sns-logo a {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  color: #333;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+  
+}
+
+.sns-logo img {
+  width: 45px; 
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* 로그인 alert 창 css */
+.alert-button {
+  background-color: unset;
+  color: #ff697b;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.title-text {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 20px;
 }
