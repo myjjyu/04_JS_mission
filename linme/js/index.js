@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // content 요소 선택
   const content = document.getElementById("main-secend");
 
-  fetch("http://localhost:3002/iconList")
+  fetch("http://localhost:3002/iconList") ////ajax 가져오기
     .then((response) => {
       if (!response.ok) {
         throw new Error("네트워크 응답에 문제가 있습니다.");
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const img = document.createElement("img");
           img.src = product.image;
           img.alt = product.description;
-          img.style.width = "200px"; // 이미지 크기 설정
-          img.style.height = "auto"; // 높이는 자동 조정
+          img.style.width = "200px";
+          img.style.height = "auto"; 
 
           // description p 요소 생성
           const description = document.createElement("p");
@@ -79,9 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ul.appendChild(li);
           });
 
-
-
-//추가한부분// ---------------------------------------------------------------
+// ---------------------------------------------------------------
          // 제품 이미지 클릭 시 페이지 이동
           // img.addEventListener("click", () => {
           //   window.location.href = "./Page.html"; 
@@ -92,30 +90,24 @@ document.addEventListener("DOMContentLoaded", () => {
         // });
 // ---------------------------------------------------------------
 
-
-
-
-
-
-
         imgList.appendChild(ul);
 
-        // block에 mainList와 imgList 추가
+        //mainList, imgList 추가
         block.appendChild(mainList);
         block.appendChild(imgList);
 
-        // content에 block 추가
+        //  block 추가
         content.appendChild(block);
       });
     })
     .catch((error) => {
-      console.error("데이터를 가져오는 중 오류 발생:", error);
+      console.error("데이터 오류", error);
     });
 
-  // 클릭 시 색상 변경 기능
+  // 클릭 시 컬러 변경 
   const sortLinks = document.querySelectorAll(".all_list_name a");
 
-  // 기본 색상 설정 (추천순 링크)
+  // 기본 컬러 설정 (추천순 링크)
   const defaultLink = document.getElementById("sort-recommend");
   defaultLink.classList.add("active");
 
@@ -123,10 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
 
-      // 모든 링크에서 'active' 클래스 제거
+    // 글씨 컬러 초기화 및 변경 이벤트
+    // 모든 링크에서 active 클래스 제거
       sortLinks.forEach((link) => link.classList.remove("active"));
 
-      // 클릭된 링크에 'active' 클래스 추가
+     // 클릭된 링크에 active 클래스 추가
       this.classList.add("active");
     });
   });

@@ -1,38 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("All_list");
-  let currentSort = "recommend"; // 기본 정렬 옵션
-  let currentList = "NewList"; // 기본 리스트 옵션
+  let currentSort = "recommend"; // 기본정렬 : 추천순 5개 정렬
+  // let currentList = "NewList"; // 기본리스트 : 신상품 5개 정렬 // 혹시몰라서 추가한 항목임..ㅎ
 
-  // URL에서 쿼리 파라미터를 읽어 currentList 값을 설정
   const urlParams = new URLSearchParams(window.location.search);
   const listParam = urlParams.get("list");
   if (listParam) {
-    currentList = listParam;
+    currentList = listParam; //신상품, 베스트, 특가상품 선택시 페이지가 자동으로 해당목록 업데이트
   }
 
   function renderData(data) {
-    content.innerHTML = ""; // 이전 콘텐츠 지우기
+    content.innerHTML = ""; // 이전 콘텐츠 초기화 후 제품 추가
 
+    // 제품정보 및 이미지 스타일
     data.forEach((product, index) => {
-      const li = document.createElement("li"); // li 생성
+      const li = document.createElement("li"); // 제품정보
 
-      const img = document.createElement("img");
+      const img = document.createElement("img"); // 제품 이미지 및 스타일
       img.src = product.image;
       img.alt = product.description;
       img.style.width = "200px";
       img.style.height = "auto";
 
-      const description = document.createElement("p");
+      const description = document.createElement("p"); // 제품설명
       description.textContent = product.description;
 
+      // 할인가 및 원래가격
       const discount = document.createElement("p");
       discount.classList.add("discount");
       discount.innerHTML = `${product.discount} <span class="original-price">${product.originalPrice}</span>`;
-
+     
+      //현재 판매 가격
       const price = document.createElement("p");
       price.classList.add("price");
       price.textContent = product.price;
 
+      //배송정보
       const shipping = document.createElement("p");
       shipping.classList.add("shipping");
       shipping.textContent = product.shipping;
@@ -48,38 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
         a.appendChild(shipping);
         li.appendChild(a);
       } else {
-      
         li.appendChild(img);
         li.appendChild(description);
         li.appendChild(discount);
         li.appendChild(price);
         li.appendChild(shipping);
       }
-  
-      content.appendChild(li); // li를 content에 추가
+
+      content.appendChild(li); 
     });
   }
 
-  function sortData(data, criterion) {
-    let sortedData = [...data]; // 원본 데이터 배열을 복사
+  function sortData(data, criterion) { // 데이터 정렬
+    let sortedData = [...data];  // 원본 데이터 복사후 정렬
 
     switch (criterion) {
-      case "recommend":
-        // 기본 정렬 (데이터 순서 그대로 유지)
+      case "recommend": // 기본배열(추천순)
         break;
-      case "discount":
+      case "discount": // 혜택순(할인순)
         sortedData.sort(
           (a, b) => parseFloat(b.discount) - parseFloat(a.discount)
         );
         break;
-      case "lowPrice":
+      case "lowPrice": // 낮은가격순
         sortedData.sort(
           (a, b) =>
             parseFloat(a.price.replace(/[^0-9]/g, "")) -
             parseFloat(b.price.replace(/[^0-9]/g, ""))
         );
         break;
-      case "highPrice":
+      case "highPrice": // 높은가격순
         sortedData.sort(
           (a, b) =>
             parseFloat(b.price.replace(/[^0-9]/g, "")) -
@@ -88,65 +89,86 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
 
-    renderData(sortedData);
+    renderData(sortedData); // 화면에 표시하기
   }
 
-  function fetchData() {
+  function fetchData() { //ajax 가져오기
     fetch("http://localhost:3002/AllList")
       .then((response) => response.json())
       .then((data) => {
         const selectedList = data[currentList]; // 현재 선택된 리스트에 해당하는 데이터
         sortData(selectedList, currentSort);
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => console.error("데이터에러:", error));
   }
 
-  // 정렬 옵션 클릭 이벤트 리스너 추가
-  document.querySelector(".all_list_name li:nth-child(1) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentSort = "recommend";
-    fetchData(); // 데이터 가져오기
-  });
+  // 정렬 클릭하면 해당 데이터 표시하기
+  // 추천순(기본)
+  document
+    .querySelector(".all_list_name li:nth-child(1) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      currentSort = "recommend";
+      fetchData(); // 데이터 가져오기
+    });
 
-  document.querySelector(".all_list_name li:nth-child(2) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentSort = "discount";
-    fetchData(); // 데이터 가져오기
-  });
+     // 혜택순(할인순)
+  document
+    .querySelector(".all_list_name li:nth-child(2) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      currentSort = "discount";
+      fetchData(); // 데이터 가져오기
+    });
 
-  document.querySelector(".all_list_name li:nth-child(3) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentSort = "lowPrice";
-    fetchData(); // 데이터 가져오기
-  });
+     //낮은가격순
+  document
+    .querySelector(".all_list_name li:nth-child(3) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      currentSort = "lowPrice";
+      fetchData(); // 데이터 가져오기
+    });
 
-  document.querySelector(".all_list_name li:nth-child(4) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentSort = "highPrice";
-    fetchData(); // 데이터 가져오기
-  });
+    //높은가격순
+  document
+    .querySelector(".all_list_name li:nth-child(4) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      currentSort = "highPrice";
+      fetchData(); // 데이터 가져오기
+    });
 
-  // 리스트 옵션 클릭 이벤트 리스너 추가
-  document.querySelector(".header-list li:nth-child(1) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentList = "NewList";
-    window.location.search = `?list=${currentList}`; // URL 업데이트
-    fetchData(); // 데이터 가져오기
-  });
 
-  document.querySelector(".header-list li:nth-child(2) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentList = "BestList";
-    window.location.search = `?list=${currentList}`; // URL 업데이트
-    fetchData(); // 데이터 가져오기
-  });
 
-  document.querySelector(".header-list li:nth-child(3) a").addEventListener("click", (e) => {
-    e.preventDefault();
-    currentList = "GoodList";
-    window.location.search = `?list=${currentList}`; // URL 업데이트
-    fetchData(); // 데이터 가져오기
-  });
+
+ // 리스트 페이지 주소만 다르고 한페이지로 보이게 설정영역
+  document
+    .querySelector(".header-list li:nth-child(1) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault(); // 페이지 이동방지
+      currentList = "NewList";  // 신상품
+      window.location.search = `?list=${currentList}`; // URL 업데이트
+      fetchData(); // 데이터 가져오기
+    });
+
+  document
+    .querySelector(".header-list li:nth-child(2) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault(); // 페이지 이동방지
+      currentList = "BestList"; // 베스트
+      window.location.search = `?list=${currentList}`; // URL 업데이트
+      fetchData(); // 데이터 가져오기
+    });
+
+  document
+    .querySelector(".header-list li:nth-child(3) a")
+    .addEventListener("click", (e) => {
+      e.preventDefault(); // 페이지 이동방지
+      currentList = "GoodList"; // 특가상품
+      window.location.search = `?list=${currentList}`; // URL 업데이트
+      fetchData(); // 데이터 가져오기
+    });
 
   // 초기 데이터 렌더링
   fetchData();
@@ -154,16 +176,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-//// 신상품 / 베스트 / 특가상품 클릭, 엑티브 이벤트
+// -------------------------------------------
+//// 신상품 / 베스트 / 특가상품 클릭하면  해당 데이터에 컬러 및 밑줄 
 const headerLinks = document.querySelectorAll(".header-list a");
 
-// URL에서 쿼리 파라미터 'list' 값을 가져옴
+
 const urlParams = new URLSearchParams(window.location.search);
 const activeList = urlParams.get("list");
 
-// 페이지 로드 시 URL의 list 값에 해당하는 링크에 active 클래스 추가
+
 if (activeList) {
   headerLinks.forEach((link) => {
     if (link.dataset.list === activeList) {

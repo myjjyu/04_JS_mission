@@ -13,5 +13,4 @@ json-server --watch ./data.json --port 3002 --static ./public
 
 
 pause
-
 @REM watch : 데이타타입을 나타냄

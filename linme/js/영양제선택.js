@@ -28,7 +28,7 @@ const icons = [
 // 아이콘 리스트 가져오기
 const iconList = document.getElementById("iconList");
 
-// 이미지 반복 생성
+// 이미지 반복 
 icons.forEach((icon) => {
   const swiperIcon = document.createElement("div");
   swiperIcon.classList.add("swiper-icon");
@@ -58,13 +58,13 @@ icons.forEach((icon) => {
   iconList.appendChild(swiperIcon);
 });
 
-// 클릭 시 색상http://127.0.0.1:5500/index.html# 변경 기능
 const swiperIcons = document.querySelectorAll('.swiper-icon');
 
 swiperIcons.forEach(icon => {
   icon.addEventListener('click', function(event) {
-    event.preventDefault(); // 링크의 기본 동작 방지
+    event.preventDefault(); //기본 동작 방지(상단으로 이동 방지)
     
+    // 글씨 컬러 초기화 및 변경 이벤트
     // 모든 아이콘에서 active 클래스 제거
     swiperIcons.forEach(icon => icon.classList.remove('active'));
     

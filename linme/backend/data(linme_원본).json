@@ -137,6 +137,52 @@
           "shipping": "무료배송"
         }
       ]
+    },
+    {
+      "title": "건강한 혈행을 위해 필요한 영양소",
+      "subtitle": "✔️대체불가 필수 지방산 오메가-3✔️",
+      "products": [
+        {
+          "image": "./img/혈행1.jpg",
+          "description": "(캐나다/3개월) 네츄럴메이드 플랙씨드앤햄프씨드오일 (식물성오메가)1000mg 180캡슐",
+          "discount": "58%",
+          "originalPrice": "87,000",
+          "price": "36,800원",
+          "shipping": "무료배송"
+        },
+        {
+          "image": "./img/혈행2.png",
+          "description": "[코오롱제약] 알티지오메가3 멀티플러스 1,023mgX30캡슐",
+          "discount": "55%",
+          "originalPrice": "70,000",
+          "price": "32,000원",
+          "shipping": "무료배송"
+        },
+        {
+          "image": "./img/혈행3.jpg",
+          "description": "네추럴메이드 알티지 오메가-3 에이드 120C(2개월분)",
+          "discount": "75%",
+          "originalPrice": "79,600",
+          "price": "20,100원",
+          "shipping": "무료배송"
+        },
+        {
+          "image": "./img/혈행4.jpg",
+          "description": "[퍼니트] 프리미엄 식물성 알티지 오메가3 880mgX30캡슐",
+          "discount": "49%",
+          "originalPrice": "27,900",
+          "price": "14,500원",
+          "shipping": "무료배송"
+        },
+        {
+          "image": "./img/혈행5.jpg",
+          "description": "[비욘드오리진] 프라임 알티지 오메가-3 비타민D,E 1,350mgX60정",
+          "discount": "5%",
+          "originalPrice": "75,000",
+          "price": "71,250원",
+          "shipping": "무료배송"
+        }
+      ]
     }
   ],
 
@@ -151,7 +197,7 @@
         "shipping": "무료배송"
       },
       {
-        "image": "./img/2.광동70포.jpg",
+        "image": "./img/2광동70포.jpg",
         "description": "[광동] 비타500 데일리스틱 (70포)",
         "discount": "9%",
         "originalPrice": "16,900",
@@ -186,7 +232,7 @@
   
     "BestList": [
       {
-        "image": "./img/2.광동70포.jpg",
+        "image": "./img/2광동70포.jpg",
         "description": "[광동] 비타500 데일리스틱 (70포)",
         "discount": "9%",
         "originalPrice": "16,900",
@@ -237,7 +283,7 @@
         "shipping": "무료배송"
       },
       {
-        "image": "./img/2.광동70포.jpg",
+        "image": "./img/2광동70포.jpg",
         "description": "[광동] 비타500 데일리스틱 (70포)",
         "discount": "9%",
         "originalPrice": "16,900",
@@ -261,7 +307,7 @@
         "shipping": "무료배송"
       },
       {
-        "image": "./img/goodlist5.jpg",
+        "image": "./img/goodlist5.png",
         "description": "[정관장] 홍삼대정세트 홍삼대정 250GgX2병 + 홍삼캔디 120g (쇼핑백증정)",
         "discount": "71%",
         "originalPrice": "100,000",
