@@ -130,16 +130,16 @@ ul {
 }
 
 .deliver {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.07;
   letter-spacing: -0.28px;
   color: #787878;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .shipping {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.07;
   letter-spacing: -0.28px;
@@ -167,18 +167,19 @@ ul {
 
 /* 수량 버튼 */
 .number-control {
-  width: 100px;
+  width: 95px;
   height: 27px;
-  border: solid 0.8px #d2d2d2;
+  border: solid 1px #d2d2d2;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  border-radius: 3px;
 }
 
 .minus,
 .plus {
-  width: 45px; 
+  width: 45px;
   height: 100%;
   /* background-color: #d77777; */
   padding-left: 7px;
@@ -196,6 +197,7 @@ ul {
 
 .minus::after {
   content: "-";
+  margin-top: -2px;
 }
 
 .plus::before {
@@ -203,8 +205,8 @@ ul {
 }
 .number {
   /* background-color: #c41818; */
-  width: 40px; 
-  text-align: center; 
+  width: 40px;
+  text-align: center;
   font-size: 15px;
   color: #333;
 }
@@ -299,6 +301,13 @@ ul {
   .on {
     color: #333;
   }
+}
+
+.endsolid {
+  margin-bottom: 0;
+  margin-top: 30px;
+  height: 0;
+  border: 2px solid #f3f3f3;
 }
 
 .endsolid2 {
@@ -409,6 +418,63 @@ ul {
   gap: 30px;
   margin-left: auto; /* 오른쪽 으로 붙기*/
 }
+
+/* // 필수 표기정보 alert 창 css// */
+
+.required-box{
+overflow: hidden;
+}
+
+.required-text{
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  margin-bottom: -20px;
+}
+
+.required-button {
+  background-color: unset;
+  color: #ff697b;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+table {
+  /* border: 1px solid #a5a5a5; */
+  border-collapse: collapse;
+  margin: 40px auto 0 auto;
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+  display: block;
+  text-align: left;
+}
+
+td {
+  border: solid 1px #d2d2d2;
+  width: 320px;
+  padding: 13px 15px 13px 10px;
+  font-size: 13px;
+  max-height: 50px;
+  overflow: hidden;
+  color: #333;
+  font-weight: 600;
+}
+
+td:nth-child(odd) {
+  background-color: #f3f3f3;
+  color: #787878;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: -0.26px;
+  width: 147px;
+  height: 52px;
+  border-right: 1px solid #f3f3f3;
+}
+
 
 /* 문의하기버튼 alert 창 css */
 .alert-button {

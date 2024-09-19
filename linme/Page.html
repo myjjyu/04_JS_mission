@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/linme.ico" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -27,11 +28,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
     <header>
       <div class="header-container">
         <div class="info-item">
-          <a href="https://linme.kr/login">로그인</a>
+          <a href="./login.html">로그인</a>
           <span>|</span>
           <a href="https://linme.kr/signUp">회원가입</a>
           <span>|</span>
-          <a href="./index.html">고객센터 ▾</a>
+          <a href="./login.html">고객센터 ▾</a>
         </div>
         <div class="top-main">
           <a href="./index.html">
@@ -56,25 +57,25 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
             </div>
           </div>
           <div class="top-item">
-            <a href="#"
+            <a href="./login.html"
               ><img
                 class="item"
                 src="./img/data_image_png;base… (2).png"
                 alt="Item 1"
             /></a>
-            <a href="#"
+            <a href="./login.html"
               ><img
                 class="item"
                 src="./img/data_image_png;base… (4).png"
                 alt="Item 2"
             /></a>
-            <a href="#"
+            <a href="./login.html"
               ><img
                 class="item"
                 src="./img/data_image_png;base….png"
                 alt="Item 3"
             /></a>
-            <a href="#"
+            <a href="./login.html"
               ><img
                 class="item"
                 src="./img/data_image_png;base… (1).png"
@@ -150,6 +151,86 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
           </ul>
 
           <button class="required-Info">필수 표기 정보</button>
+          <div class="required-box" style="display:none;">
+            <table>
+              <tr>
+                <td>상품명</td>
+                <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>제조업소</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr> 
+                 <tr>
+                  <td>제조업소</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>소재지</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>소비기한</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>보관방법</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>포장단위별 내용물의 용량(중량), 수량</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>포장단위별 수량
+                  </td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>원료명 및 함량</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>영양정보</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>기능정보
+                  </td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>섭취량,섭취방법 및 섭취시 주의사항</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>질병의 예방 및 치료를 위한 의약품이 아니라는 내용의 문구
+                  </td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>유전자 변형 건강기능식품 해당하는 경우 표시</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>수입건강기능식품에 해당하는 경우</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>소비자 안전을 위한 주의사항</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>소비자 상담 관련 전화번호</td>
+                  <td>상품 상세페이지 참조</td>
+                </tr>
+                <tr>
+                  <td>건강기능식품 광고심의번호</td>
+                  <td>220210103</td>
+                </tr>
+                
+            </table>
+          </div>
           <p class="solid"></p>
 
           <div class="number-control">
@@ -353,6 +434,21 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
         .getElementById("categoryButton")
         .addEventListener("click", function () {
           alert("🚨강사님이 구현안해도 된다함🚨");
+        });
+
+      // 필수 표기정보 alert창//
+      document
+        .querySelector(".required-Info")
+        .addEventListener("click", (e) => {
+          Swal.fire({
+            title: "상품고시정보",
+            html: document.querySelector(".required-box").innerHTML,
+            confirmButtonText: "확인",
+            customClass: {
+              confirmButton: "required-button",
+              title: "required-text",
+            },
+          });
         });
 
       //문의하기 alert창

@@ -1,0 +1,27 @@
+main {
+  width: 100%;
+  height: 540px;
+  margin-top: 220px;
+}
+
+.login-container {
+  margin-top: 220px;
+  width: 100%;
+  height: 540px;
+  margin-top: 220px;
+  left: 30%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.input-info{
+  position: relative;
+
+}
+
+.login-list{
+ 
+}

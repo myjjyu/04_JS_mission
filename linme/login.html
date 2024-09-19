@@ -5,32 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./img/linme.ico" />
     <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/linme.css" />
+    <link rel="stylesheet" href="./css/login.css">
     <title>린미 - 세상에 없던 H-커머스</title>
   </head>
-  <style>
-    /* 로딩 */
-    #loading {
-      width: 100px;
-      height: 100px;
-      background: url(./img/loding.png) no-repeat center/cover;
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999999;
-      display: none;
-    }
-
-    #loading.active {
-      display: block;
-    }
-  </style>
   <body>
-    <div id="loading"></div>
     <!-- 오른쪽 하단 고정 버튼 -->
     <div class="Topbutton">
       <a href="#"><img src="./img/Topbutton.png" alt="Top Button" /></a>
@@ -38,13 +20,13 @@
 
     <!-- 헤더 영역 -->
     <header>
-      <div class="header-container header-container1">
+      <div class="header-container">
         <div class="info-item">
-          <a href="./login.html">로그인</a>
+          <a href="https://linme.kr/login">로그인</a>
           <span>|</span>
           <a href="https://linme.kr/signUp">회원가입</a>
           <span>|</span>
-          <a href="./login.html">고객센터 ▾</a>
+          <a href="./index.html">고객센터 ▾</a>
         </div>
         <div class="top-main">
           <a href="./index.html">
@@ -69,25 +51,25 @@
             </div>
           </div>
           <div class="top-item">
-            <a href="./login.html"
+            <a href="#"
               ><img
                 class="item"
                 src="./img/data_image_png;base… (2).png"
                 alt="Item 1"
             /></a>
-            <a href="./login.html"
+            <a href="#"
               ><img
                 class="item"
                 src="./img/data_image_png;base… (4).png"
                 alt="Item 2"
             /></a>
-            <a href="./login.html"
+            <a href="#"
               ><img
                 class="item"
                 src="./img/data_image_png;base….png"
                 alt="Item 3"
             /></a>
-            <a href="./login.html"
+            <a href="#"
               ><img
                 class="item"
                 src="./img/data_image_png;base… (1).png"
@@ -113,70 +95,58 @@
         </div>
       </div>
     </header>
-
     <!-- 메인 영역 -->
     <main>
-      <div class="main-first">
-        <!-- 슬라이드 영역 -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="#"><img src="./img/유산균.jpg" alt="유산균" /></a>
-            </div>
-            <!-- <div class="swiper-slide">
-              <a href="#"><img src="./img/추석.png" alt="추석" /></a>
-            </div> -->
-            <div class="swiper-slide">
-              <a href="#"
-                ><img src="./img/출석체크.jpg" alt="출석체크"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#"
-                ><img src="./img/프로폴리스.jpg" alt="프로폴리스"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#"><img src="./img/효소.jpg" alt="효소" /></a>
-            </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
+      <div class="login-container">
+        <h1>  로그인</h1>
 
-        <!-- 영양제 선택 영역 -->
-        <div class="main-info">
-          <div class="title">어떤 영양제를 찾으세요?</div>
-          <div class="subtitle">고민을 선택해 주세요.</div>
-        </div>
-
-        <!-- 아이콘 리스트 영역 -->
-        <div class="swiper-icon-list" id="iconList"></div>
-        <!-- JavaScript 영양제선태.js 파일 부분 -->
+<label class="input-info">
+  <input class="input" type="text" placeholder="아이디 입력 (이메일)">
+  <input class="input" type="text" placeholder="비밀번호 입력">
+  <img src="./img/login/password.png">
+  <input class="input" type="checkbox">아이디 저장
+</label>
+<div class="login-list">
+  <ul>
+    <li>
+      <a href="#">아이디 찾기</a>
+    <span>|</span>
+    </li>
+    <li>
+      <a href="#">비밀번호 찾기</a>
+    <span>|</span>
+    </li>
+    <li>
+      <a href="#">화원가입</a>
+    <span>|</span>
+    </li>
+  </ul>
+  <div>
+    <button>로그인</button>
+  </div>
+  <div>-</div>
+  <div>SNS 로그인</div>
+  <div>
+    <a href="#">
+      <img src="./img/login/카카오.png"> 카카오
+    </a>
+ 
+    <a href="#">
+      <img src="./img/login/네이버.png"> 네이버
+    </a>
+ 
+    <a href="#">
+      <img src="./img/login/애플.png"> 애플
+    </a>
+ 
+  </div>
+</div>
       </div>
 
-      <div id="main-secend">
-        <!-- 영양제 목록 영역 -->
-        <!-- JavaScript index.js 파일 부분 -->
-      </div>
 
-      <div id="main-end">
-        <div class="endsolid"></div>
-        <div class="main_name">전체상품</div>
-        <div>
-          <ul class="all_list_name">
-            <li><a href="#" id="sort-recommend">추천순</a><span>|</span></li>
-            <li><a href="#" id="sort-discount">혜택순</a><span>|</span></li>
-            <li>
-              <a href="#" id="sort-low-price">낮은가격순</a><span>|</span>
-            </li>
-            <li><a href="#" id="sort-high-price">높은가격순</a></li>
-          </ul>
-        </div>
-        <ul id="All_list" class="img-list img-list2">
-          <!-- index_end.js 영역-->
-        </ul>
-      </div>
+
+
+
     </main>
     <!-- 푸터 영역 -->
     <footer>
@@ -276,12 +246,13 @@
     </footer>
 
     <!-- JavaScript 파일 -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.all.min.js
+    "></script>
+
     <script src="./assets/UtilHelper.js"></script>
-    <script src="./js/영양제선택.js"></script>
     <script src="./js/index.js"></script>
-    <script src="./js/indexend.js"></script>
 
     <script>
       // 카테고리alert창
@@ -291,41 +262,18 @@
           alert("🚨강사님이 구현안해도 된다함🚨");
         });
 
-      // 라이브러리 화면
-      var swiper = new Swiper(".mySwiper", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        loop: true,
-      });
-
-      // 로딩바 표시 함수
-      function showLoading() {
-        document.getElementById("loading").classList.add("active");
-      }
-
-      // 로딩바 숨김 함수
-      function hideLoading() {
-        document.getElementById("loading").classList.remove("active");
-      }
-
-      // 모든 클릭 이벤트에 로딩바 적용 (스크롤 제외)
-      document.addEventListener("click", function (event) {
-        // 스크롤바 클릭은 제외
-        if (event.target !== document.getElementById("categoryButton")) {
-          showLoading();
-          setTimeout(hideLoading, 200);
-        }
-      });
-
-      var check = $("input[type='checkbox']");
-      check.click(function () {
-        $("p").toggle();
+      //문의하기 alert창
+      document.querySelector(".button").addEventListener("click", (e) => {
+        Swal.fire({
+          title: "로그인이 필요합니다.",
+          confirmButtonText: "확인",
+          width: 300,
+          height: 145,
+          customClass: {
+            confirmButton: "alert-button",
+            title: "title-text",
+          },
+        });
       });
     </script>
   </body>
