@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("All_list");
   let currentSort = "recommend"; // 기본정렬 : 추천순 5개 정렬
-  // let currentList = "NewList"; // 기본리스트 : 신상품 5개 정렬 // 혹시몰라서 추가한 항목임..ㅎ
+  let currentList = "NewList"; // 기본리스트 : 신상품 5개 정렬  // 없으면 초반에 화면에 아무것도 안뜸,,
 
   const urlParams = new URLSearchParams(window.location.search);
   const listParam = urlParams.get("list");
