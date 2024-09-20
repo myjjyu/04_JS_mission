@@ -652,6 +652,7 @@ footer {
 
   span {
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 
@@ -686,6 +687,7 @@ footer {
 
 .footer-2 a {
   color: #787878;
+  text-decoration: underline;
 }
 
 .footer-3 {
