@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // 할인가 및 원래가격
       const discount = document.createElement("p");
       discount.classList.add("discount");
-      discount.innerHTML = `${product.discount} <span class="original-price">${product.originalPrice}</span>`;
+      discount.innerHTML = `${product.discount} 
+      <span class="original-price">${product.originalPrice}</span>`;
 
       //현재 판매 가격
       const price = document.createElement("p");
@@ -156,31 +157,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 데이터 화면표시
   fetchData(); 
-});
-
-
-// -------------------------------------------
-//// 신상품 / 베스트 / 특가상품 클릭하면  해당 데이터에 컬러 및 밑줄 
-const headerLinks = document.querySelectorAll(".header-list a");
-
-const urlParams = new URLSearchParams(window.location.search);
-const activeList = urlParams.get("list");
-
-if (activeList) {
-  headerLinks.forEach((link) => {
-    if (link.dataset.list === activeList) {
-      link.classList.add("active");
-    }
-  });
-}
-
-// 각 링크에 클릭 이벤트 추가
-headerLinks.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    // 모든 링크에서 active 클래스 제거
-    headerLinks.forEach((l) => l.classList.remove("active"));
-
-    // 클릭한 링크에만 active 클래스 추가
-    this.classList.add("active");
-  });
 });

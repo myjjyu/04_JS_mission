@@ -10,8 +10,35 @@ tabs.forEach((tab) => {
   });
 });
 
-// 수량 + 클릭시 증가 - 클릭시 감소 에 따른 함계금액 값 구하기
+//문의하기 alert창
+document.querySelector(".button").addEventListener("click", (e) => {
+  Swal.fire({
+    title: "로그인이 필요합니다.",
+    confirmButtonText: "확인",
+    width: 300,
+    height: 145,
+    customClass: {
+      confirmButton: "alert-button",
+      title: "title-text",
+    },
+  });
+});
 
+// 필수 표기정보 alert창//
+document.querySelector(".required-Info").addEventListener
+("click", (e) => {
+  Swal.fire({
+    title: "상품고시정보",
+    html: document.querySelector(".required-box").innerHTML,
+    confirmButtonText: "확인",
+    customClass: {
+      confirmButton: "required-button",
+      title: "required-text",
+    },
+  });
+});
+
+// 수량 + 클릭시 증가 - 클릭시 감소 에 따른 함계금액 값 구하기
 document.addEventListener("DOMContentLoaded", function () {
   // 초기 값
   let quantity = 1;

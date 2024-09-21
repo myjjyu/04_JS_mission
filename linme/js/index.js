@@ -104,7 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("데이터 오류", error);
     });
 
-  // 클릭 시 컬러 변경 
+
+// -------------------------------------------
+//// 추천순, 혜택순, 낮은가격순, 높은가격순 클릭하면  해당 데이터에 컬러 및 밑줄 
   const sortLinks = document.querySelectorAll(".all_list_name a");
 
   // 기본 컬러 설정 (추천순 링크)
@@ -124,3 +126,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+    

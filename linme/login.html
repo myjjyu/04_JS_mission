@@ -147,17 +147,18 @@
         <div class="solid"></div>
         <div class="sns-login">SNS 로그인</div>
         <div class="sns-logo">
-          <a href="#">
+          
+          <a target="_blank"  href="http://127.0.0.1:5500/index.html">
             <img src="./img/login/카카오.png" />
             <span>카카오</span>
           </a>
 
-          <a href="#">
+          <a target="_blank"  href="http://127.0.0.1:5500/index.html">
             <img src="./img/login/네이버.png" />
             <span>네이버</span>
           </a>
 
-          <a href="#">
+          <a target="_blank"  href="http://127.0.0.1:5500/index.html">
             <img src="./img/login/애플.png" />
             <span>애플</span>
           </a>
@@ -174,6 +175,7 @@
           <li><a href="https://admin.linme.kr/login">입점·제휴 문의</a></li>
         </ul>
       </div>
+
       <div class="footer-secoend">
         <div class="footer-logo">
           <img src="./img/logo_footer@2x.png" width="80" height="38" />
@@ -279,19 +281,6 @@
           alert("🚨강사님이 구현안해도 된다함🚨");
         });
 
-      //문의하기 alert창
-      document.querySelector(".button").addEventListener("click", (e) => {
-        Swal.fire({
-          title: "로그인이 필요합니다.",
-          confirmButtonText: "확인",
-          width: 300,
-          height: 145,
-          customClass: {
-            confirmButton: "alert-button",
-            title: "title-text",
-          },
-        });
-      });
     </script>
   </body>
 </html>

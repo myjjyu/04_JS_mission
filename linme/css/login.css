@@ -158,15 +158,16 @@ h1 {
   justify-content: center;
   gap: 10px; 
 }
+
 .sns-logo a {
   display: flex;
   flex-direction: column; 
   align-items: center;
   color: #333;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   padding: 10px;
-  
+  cursor: pointer;
 }
 
 .sns-logo img {
@@ -174,7 +175,6 @@ h1 {
   height: auto;
   margin-bottom: 15px;
 }
-
 
 
 /* ---------------------------------------------*/

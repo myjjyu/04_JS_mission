@@ -249,22 +249,33 @@
           alert("🚨강사님이 구현안해도 된다함🚨");
         });
 
-      // 로딩바 표시 함수
+
+
+     // 로딩바 영역
+      // 로딩바 보이기 함수
       function showLoading() {
-        document.getElementById("loading").classList.add("active");
+        var loadingElement = document.getElementById("loading");
+        loadingElement.classList.add("active");
       }
 
-      // 로딩바 숨김 함수
+      // 로딩바 숨기기 함수
       function hideLoading() {
-        document.getElementById("loading").classList.remove("active");
+        var loadingElement = document.getElementById("loading");
+        loadingElement.classList.remove("active");
       }
 
-      // 모든 클릭 이벤트에 로딩바 적용 (스크롤 제외)
+      // 모든 클릭 이벤트에 로딩바 생성 (스크롤 제외)
       document.addEventListener("click", function (event) {
-        // 스크롤바 클릭은 제외
-        if (event.target !== document.getElementById("categoryButton")) {
+        var categoryButton = document.getElementById("categoryButton");
+
+        // 카테고리 버튼 제외 로딩바 생성
+        if (event.target !== categoryButton) {
           showLoading();
-          setTimeout(hideLoading, 200);
+
+          // 0.2초 후 로딩바 숨기기
+          setTimeout(function () {
+            hideLoading();
+          }, 200);
         }
       });
 

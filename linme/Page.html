@@ -435,35 +435,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.13.1/dist/sweetalert2.min.css
         .addEventListener("click", function () {
           alert("🚨강사님이 구현안해도 된다함🚨");
         });
-
-      // 필수 표기정보 alert창//
-      document
-        .querySelector(".required-Info")
-        .addEventListener("click", (e) => {
-          Swal.fire({
-            title: "상품고시정보",
-            html: document.querySelector(".required-box").innerHTML,
-            confirmButtonText: "확인",
-            customClass: {
-              confirmButton: "required-button",
-              title: "required-text",
-            },
-          });
-        });
-
-      //문의하기 alert창
-      document.querySelector(".button").addEventListener("click", (e) => {
-        Swal.fire({
-          title: "로그인이 필요합니다.",
-          confirmButtonText: "확인",
-          width: 300,
-          height: 145,
-          customClass: {
-            confirmButton: "alert-button",
-            title: "title-text",
-          },
-        });
-      });
     </script>
   </body>
 </html>
